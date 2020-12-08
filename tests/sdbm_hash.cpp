@@ -11,3 +11,8 @@ TEST_CASE("Length helper function yields 0 on nullptr", "[positive]") {
     constexpr const char* const empty{nullptr};
     REQUIRE(sdbm::length(empty) == 0);
 }
+
+TEST_CASE("Length helper function yields 13 for const char * with 13 characters", "[positive]") {
+    constexpr const char* const wild_thirteen{"1234567890123"};
+    REQUIRE(sdbm::length(wild_thirteen) == 13);
+}
