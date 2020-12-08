@@ -55,7 +55,7 @@ struct hash_calculator<1> {
 };
 
 // Utility Function for Compile-Time String Length
-size_t constexpr length(const char* str) { return *str ? 1 + length(str + 1) : 0; }
+size_t constexpr length(const char* str) { return str ? ( *str ? 1 + length(str + 1) : 0 ) : 0; }
 
 }  // namespace
 
