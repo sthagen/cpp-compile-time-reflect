@@ -8,7 +8,8 @@ TEST_CASE("SDBM hash of string 42", "[positive]") {
 }
 
 TEST_CASE("SDBM hashes of different strings are different", "[positive]") {
-    constexpr const char* const a{"a"}, b{"b"};
+    constexpr const char* const a{"a"};
+    constexpr const char* const b{"b"};
     sdbm::hash_type const hash_of_a{sdbm::hash_calculator<sdbm::length(a)>::calculate_value(a)};
     sdbm::hash_type const hash_of_b{sdbm::hash_calculator<sdbm::length(b)>::calculate_value(b)};
     REQUIRE(hash_of_a != hash_of_b);
