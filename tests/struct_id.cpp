@@ -10,7 +10,7 @@ TEST_CASE("Struct identity compiles and is reproducible", "[positive]") {
       "}"
   };
   struct Foo {
-      size_t const version{sdbm::hash_calculator<sdbm::length(FOO_SHAPE)>::calculate_value(FOO_SHAPE)};
+      sdbm::hash_type const version{sdbm::hash_calculator<sdbm::length(FOO_SHAPE)>::calculate_value(FOO_SHAPE)};
       float f{3.1415f};
       double d{3.1415};
   };
