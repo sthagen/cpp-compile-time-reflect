@@ -58,28 +58,3 @@ struct hash_calculator<1> {
 size_t constexpr length(const char* str) { return str ? ( *str ? 1 + length(str + 1) : 0 ) : 0; }
 
 }  // namespace
-
-/*
-  Example Usage:
-  ==============
-  
-  #include <iostream>
-  constexpr const char* const FOO_SHAPE{
-      "Foo{"
-          "size_t const:version;"
-          "float:f;"
-          "double:d;"
-      "}"
-  };
-  struct Foo {
-      size_t const version{sdbm::hash_calculator<sdbm::length(FOO_SHAPE)>::calculate_value(FOO_SHAPE)};
-      float f{3.1415f};
-      double d{3.1415};
-  };
-  
-  int main() {
-      std::cout << "Foo --> " << Foo{}.version << " " << sdbm::length(FOO_SHAPE) << "\n";
-      // Foo --> 3738447584922188735 43
-      return 0;
-  }
-*/
