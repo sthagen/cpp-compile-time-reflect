@@ -15,6 +15,14 @@ TEST_CASE("SDBM hashes of different strings are different", "[positive]") {
     REQUIRE(hash_of_one != hash_of_another);
 }
 
+TEST_CASE("SDBM hashes of identical string values are identical", "[positive]") {
+    constexpr const char* const one{"one"};
+    constexpr const char* const also_one{"one"};
+    sdbm::hash_type const hash_of_one{sdbm::hash_calculator<sdbm::length(one)>::calculate_value(one)};
+    sdbm::hash_type const hash_of_also_one{sdbm::hash_calculator<sdbm::length(also_one)>::calculate_value(also_one)};
+    REQUIRE(hash_of_one == hash_of_also_one);
+}
+
 TEST_CASE("Length helper function yields 0 on nullptr", "[positive]") {
     constexpr const char* const empty{nullptr};
     REQUIRE(sdbm::length(empty) == 0);
