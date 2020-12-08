@@ -23,7 +23,7 @@ using hash_type = size_t;
 
 static constexpr inline hash_type recurrence(hash_type value, hash_type character) { 
     /*
-      Reccurrence relation:
+      Recurrence relation:
           value = value * 65599 + character 
       rewritten as:
           value = (value << 6) + (value << 16) - value + character
