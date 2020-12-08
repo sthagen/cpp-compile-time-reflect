@@ -8,6 +8,6 @@ TEST_CASE("SDBM hash of string 42", "[positive]") {
 }
 
 TEST_CASE("Length helper function yields 0 on nullptr", "[positive]") {
-    constexpr const char* const empty{0};
+    constexpr const char* const empty{nullptr};
     REQUIRE(sdbm::length(empty) == 0);
 }
