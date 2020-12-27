@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(REFLECT VERSION 2020.12)
+project(reflect VERSION 2020.12 LANGUAGES C CXX)
 
 option(REFLECT_BUILD_EXAMPLES "whether or not to build the examples" ON)
 option(REFLECT_BUILD_TESTS "whether or not to build the tests" ON)
